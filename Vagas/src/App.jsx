@@ -7,6 +7,7 @@ import Planos from "./pages/Planos";
 import Sobre from "./pages/Sobre";
 import Acessar from "./pages/Acessar";
 import Register from "./pages/Register";
+import Anunciar from "./pages/Anunciar";
 import PageFound from "./pages/PageFound";
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="sobre" element={<Sobre/>}/>
           <Route path="acessar" element={<Acessar/>}/>
           <Route path="register" element={<Register/>}/>
+          <Route path="anunciar" element={<Anunciar/>}/>
           <Route path="*" element={<PageFound/>}/>
         </Route>
       </Routes>

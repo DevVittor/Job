@@ -5,19 +5,19 @@ export default function Card() {
     <div className="dark:bg-black dark:text-white bg-white px-3 py-1 border border-zinc-200 h-auto w-auto">
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between">
-            <span>Publicado: 15/02/2024 - 16:25</span>
-            <span className="flex items-center gap-2"><FaEye/>243</span>
+            <span className="font-normal text-sm">Publicado: 15/02/2024</span>
+            <span className="flex items-center gap-1 font-normal text-sm"><FaEye/>243</span>
           </div>
           <h2 className="font-bold text-2xl">Loja de Roupas</h2>
           <p className="font-normal text-zinc-500 dark:text-zinc-300 leading-[18px] text-[15px]">Eu quero uma loja de roupas que tenha pagamentos em pix boleto e cartão de crédito e débito e que faça o calculo dos correios e que eu consiga mexer sem a ajudar de ninguém pois não me interessa pagar por manutenção mensal para o criado do site</p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1">
-              <span>R$ 150 reais</span>
-              <span>-</span>
-              <span>R$ 400 reais</span>
+              <h3 className="font-semibold text-base">Orçamento:</h3>
+              <span className="font-normal text-sm">R$ 400 reais</span>
             </div>
-            <div className="">
-              <span>Duração: 15 dias</span>
+            <div className="flex items-center gap-1">
+              <h3 className="font-semibold text-base">Duração:</h3>
+              <span className="font-normal text-sm">15 dias</span>
             </div>
           </div>
           <div className="flex justify-center items-center py-2">
