@@ -12,11 +12,11 @@ export default function Card() {
           <p className="font-normal text-zinc-500 dark:text-zinc-300 leading-[18px] text-[15px]">Eu quero uma loja de roupas que tenha pagamentos em pix boleto e cartão de crédito e débito e que faça o calculo dos correios e que eu consiga mexer sem a ajudar de ninguém pois não me interessa pagar por manutenção mensal para o criado do site</p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1">
-              <h3 className="font-semibold text-base">Orçamento:</h3>
+              <h3 className="font-semibold text-base">Verba:</h3>
               <span className="font-normal text-sm">R$ 400 reais</span>
             </div>
             <div className="flex items-center gap-1">
-              <h3 className="font-semibold text-base">Duração:</h3>
+              <h3 className="font-semibold text-base">Prazo:</h3>
               <span className="font-normal text-sm">15 dias</span>
             </div>
           </div>
