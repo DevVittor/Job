@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import conn from "./database/conn.js";
 import Usuario from "./models/Usuarios.js";
+import session from "express-session";
 import Anuncio from "./models/Anuncios.js";
 import cors from "cors";
 import http from "node:http";
@@ -18,6 +19,10 @@ const jwtSecret = process.env.JWT_SECRET;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
+app.use(session({
+    secret:process.env.SESSION_SECRET,
+    cookie:{maxAge:30000}
+}))
 app.disable("x-powered-by");
 
 app.post("/anunciar",async(req,res)=>{

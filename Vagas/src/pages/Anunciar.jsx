@@ -1,10 +1,11 @@
 import {useState} from "react";
 import { IoMdMegaphone } from "react-icons/io";
+import { InputNumber } from 'antd';
 export default function Anunciar() {
 
     const [titulo,setTitulo] = useState("");
     const [detalhes,setDetalhes] = useState("");
-    const [valores,setValores] = useState(50);
+    //const [valores,setValores] = useState(50);
     //const [prazo,setPrazo] = useState(null);
     //const [autor,setAutor] = useState("");
 
@@ -14,7 +15,7 @@ export default function Anunciar() {
         const formData = {
             titulo:titulo,
             detalhes:detalhes,
-            valores:valores,
+            //valores:valores,
             //prazo:prazo,
             //autor:autor
         }
@@ -33,6 +34,10 @@ export default function Anunciar() {
 
     }
 
+    const onChange = (value) => {
+        console.log('changed', value);
+    };
+
   return (
     <div className="flex justify-center items-center py-2 lg:w-[30%] w-full">
         <div className="">
@@ -43,9 +48,18 @@ export default function Anunciar() {
                 </textarea>
                 <div className="flex items-center justify-between gap-3 ">
                     <div className="flex items-center justify-center w-full">
-                        <label className="flex flex-col w-full dark:text-white" htmlFor="">
-                            <span>Verba: R$ {valores} reais</span>
-                            <input className="w-full" type="range" min={50} name="" id="" onChange={(e)=>setValores(e.target.value)}/>
+                        <label className="flex items-center gap-1 w-full dark:text-white" htmlFor="">
+                            <span>Verba:</span>
+                            <div className="flex justify-start gap-2 items-center">
+                                <InputNumber
+                                min={50}
+                                max={100000}
+                                defaultValue={100}
+                                formatter={(value) => `R$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
+                                onChange={onChange}
+                                />
+                            </div>
                         </label>
                     </div>
                     <div className="flex justify-center py-1 gap-2 items-center w-auto bg-black px-3 text-white dark:text-black font-bold rounded-[3px] cursor-pointer dark:bg-white">

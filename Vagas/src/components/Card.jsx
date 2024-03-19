@@ -11,20 +11,16 @@ export default function Card() {
           <h2 className="font-bold text-2xl whitespace-nowrap overflow-hidden text-ellipsis">Loja de Roupas apenas para jogadores de futebol</h2>
           <p className="font-normal text-zinc-500 dark:text-zinc-300 leading-[18px] text-[15px]">Eu quero uma loja de roupas que tenha pagamentos em pix boleto e cartão de crédito e débito e que faça o calculo dos correios e que eu consiga mexer sem a ajudar de ninguém pois não me interessa pagar por manutenção mensal para o criado do site</p>
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1">
+            <div className="flex justify-center items-center gap-1">
               <h3 className="font-semibold text-base">Verba:</h3>
               <span className="font-normal text-sm">R$ 400 reais</span>
             </div>
-            <div className="flex items-center gap-1">
-              <h3 className="font-semibold text-base">Prazo:</h3>
-              <span className="font-normal text-sm">15 dias</span>
+            <div className="flex justify-center items-center gap-1">
+              <button className="flex items-center gap-2 px-3 py-1 rounded-[3px] shadow-md bg-black dark:bg-white  dark:text-black text-white font-bold text-sm">
+                <FaCommentsDollar/>
+                Conversar
+              </button>
             </div>
-          </div>
-          <div className="flex justify-center items-center py-2">
-            <button className="flex items-center gap-2 px-3 py-1 rounded-[3px] shadow-md bg-black dark:bg-white  dark:text-black text-white font-bold text-sm">
-              <FaCommentsDollar/>
-              Conversar
-            </button>
           </div>
         </div>
     </div>
