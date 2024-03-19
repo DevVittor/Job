@@ -8,7 +8,7 @@ export default function Card() {
             <span className="font-normal text-sm">Publicado: 15/02/2024</span>
             <span className="flex items-center gap-1 font-normal text-sm"><FaEye/>243</span>
           </div>
-          <h2 className="font-bold text-2xl">Loja de Roupas</h2>
+          <h2 className="font-bold text-2xl whitespace-nowrap overflow-hidden text-ellipsis">Loja de Roupas apenas para jogadores de futebol</h2>
           <p className="font-normal text-zinc-500 dark:text-zinc-300 leading-[18px] text-[15px]">Eu quero uma loja de roupas que tenha pagamentos em pix boleto e cartão de crédito e débito e que faça o calculo dos correios e que eu consiga mexer sem a ajudar de ninguém pois não me interessa pagar por manutenção mensal para o criado do site</p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1">

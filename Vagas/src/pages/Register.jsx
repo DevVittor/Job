@@ -2,12 +2,14 @@ import { useState } from "react"
 
 export default function Register() {
 
+    const [nome,setNome] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
 
     async function handleDataRegister(e){
         e.preventDefault();
         const formData = {
+            nome:nome,
             email:email,
             password:password
         }
@@ -32,8 +34,9 @@ export default function Register() {
             <div className="">
                 <div className="">
                     <form onSubmit={handleDataRegister}>
-                        <input type="email" name="" id="" placeholder="Email" onChange={(e)=> setEmail(e.target.value)}/>
-                        <input type="password" name="" id="" placeholder="******" onChange={(e)=> setPassword(e.target.value)}/>
+                        <input type="text" placeholder="Nome" onChange={(e)=>setNome(e.target.value)} />
+                        <input type="email" placeholder="Email" onChange={(e)=> setEmail(e.target.value)}/>
+                        <input type="password"  placeholder="******" onChange={(e)=> setPassword(e.target.value)}/>
                         <input type="submit" value="Registrar" />   
                     </form>
                 </div>

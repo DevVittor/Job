@@ -2,8 +2,8 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 dotenv.config();
-import moment from "moment-timezone";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import conn from "./database/conn.js";
 import Usuario from "./models/Usuarios.js";
 import Anuncio from "./models/Anuncios.js";
@@ -12,6 +12,8 @@ import http from "node:http";
 const createServer = http.createServer(app);
 
 const port = process.env.PORT || 8080;
+
+const jwtSecret = process.env.JWT_SECRET;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -63,7 +65,7 @@ app.post("/anunciar",async(req,res)=>{
 })
 
 app.post("/register",async(req,res)=>{
-    const {email,password} = req.body;
+    const {nome,email,password} = req.body;
 
     try {
         const duplicateEmail = await Usuario.findOne({
@@ -77,6 +79,7 @@ app.post("/register",async(req,res)=>{
         const hash = await bcrypt.hashSync(password,salt);
 
         const createUser = await Usuario.create({
+            nome,
             email,
             password:hash
         });
@@ -103,8 +106,10 @@ app.post("/login",async(req,res)=>{
     
         const passwordCorrect = await bcrypt.compareSync(password,existUser.password);
         if(!passwordCorrect) return res.status(404).json({msg:`A senha está incorreta`});
-    
-        res.status(200).json({msg:`Login feito`});
+        
+        const token = jwt.sign({},jwtSecret,{expiresIn:'2m'});
+        console.log("Token",token);
+        res.status(200).json({msg:`Login feito`, token:`${token}`});
     } catch (error) {
         res.status(500).json({msg:`Não foi reuniar os dados para o login. ${error}`});  
     }
