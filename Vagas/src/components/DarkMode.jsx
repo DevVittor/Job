@@ -28,7 +28,7 @@ export default function DarkMode() {
 return (
     <button
     onClick={handleTheme}
-    className="absolute top-[35px] left-0 h-[25px] flex justify-center items-center pr-4 pl-3 py-0 rounded-r-[30px] bg-black text-white font-sm font-bold dark:bg-white dark:text-black"
+    className="absolute top-[80px] left-0 h-[25px] flex justify-center items-center pr-4 pl-3 py-0 rounded-r-[30px] bg-black text-white font-sm font-bold dark:bg-white dark:text-black"
   >
     {theme === "dark" ? <IoSunny /> : <IoIosMoon />}
   </button>

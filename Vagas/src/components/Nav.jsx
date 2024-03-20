@@ -5,7 +5,9 @@ import FooterBar from "./FooterBar";
 export default function Nav() {
   return (
     <>
-        <Outlet/>
+      <NavBar/>
+      <Outlet/>
+      <FooterBar/>
     </>
   )
 }

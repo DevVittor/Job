@@ -29,19 +29,23 @@ export default function Register() {
     }
 
   return (
-    <main>
-        <section>
-            <div className="">
-                <div className="">
-                    <form onSubmit={handleDataRegister}>
-                        <input type="text" placeholder="Nome" onChange={(e)=>setNome(e.target.value)} />
-                        <input type="email" placeholder="Email" onChange={(e)=> setEmail(e.target.value)}/>
-                        <input type="password"  placeholder="******" onChange={(e)=> setPassword(e.target.value)}/>
-                        <input type="submit" value="Registrar" />   
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div className="flex flex-col gap-2 h-auto border border-black dark:bg-white bg-black w-auto px-3 py-2 ">
+      <h2 className="text-xl font-bold text-white dark:text-black">Criar Conta</h2>
+      <form className="flex flex-col gap-1" onSubmit={handleDataRegister}>
+        <label className="flex flex-col gap-1" htmlFor="">
+            <span className="text-sm font-medium dark:text-black text-white">Nome:</span>
+            <input className="text-sm font-normal border border-zinc-200 outline-none px-2" type="text" name="" id="" placeholder="Nome" onChange={(e)=>setNome(e.target.value)}/>
+        </label>
+        <label className="flex flex-col gap-1" htmlFor="">
+            <span className="text-sm font-medium dark:text-black text-white">Email:</span>
+            <input className="text-sm font-normal border border-zinc-200 outline-none px-2" type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
+        </label>
+        <label className="flex flex-col gap-1" htmlFor="">
+            <span className="text-sm font-medium dark:text-black text-white">Senha:</span>
+            <input className="outline-none px-2 text-sm font-normal  border border-zinc-200" type="password" placeholder="****" onChange={(e)=>setPassword(e.target.value)}/>
+        </label>
+        <input className="mt-2 border border-zinc-200 dark:bg-black text-white" type="submit" value="Criar Conta" />
+      </form>
+    </div>
   )
 }
